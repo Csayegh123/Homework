@@ -1,0 +1,1 @@
+This being my first README file I am still learning the ways of how to properly execute my tasks. I spent some time with the homework and I was not able to really identify anything major. I know I did not do much to the script for the site looked fine, and I was under the impression that the goal was toe make the cod look "cleaner".
