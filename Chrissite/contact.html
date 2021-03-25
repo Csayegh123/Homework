@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<header>
+    <link rel="stylesheet" type="text/css" href="chrissitecss.css" media="screen"/>
+</header>
+
+    <!-- Navigation -->
+    <nav class="w3-bar w3-black">
+      <a href="index.html" class="w3-button w3-bar-item">Home</a>
+      <a href="about.html" class="w3-button w3-bar-item">About</a>
+      <a href="work.html" class="w3-button w3-bar-item">My Work</a>
+      <a href="media.html" class="w3-button w3-bar-item">Media</a>
+      <a href="contact.html" class="w3-button w3-bar-item">Contact Chris</a>
+    </nav>
+
+
+<div class="container">
+  <div style="text-align:center">  
+    <h1>Contact Chris</h1>
+    <p>Email: sayegh.topher@gmail.com</p>
+    <p>Phone Number: 913-744-6456</p>
+    </div>
+  </div>
+  
+<div class="container">
+    <div style="text-align:center">  
+      <div class="column">
+        <img src="chrischeetah.jpeg" id="center" style="max-width: 550px;">
+      </div>
+      <h2>Send a message</h2>
+      <p>Enter You information below to send a message to my inbox</p>
+    </div>
+    <div class="row">
+    
+      <div class="column">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:80px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </html>
