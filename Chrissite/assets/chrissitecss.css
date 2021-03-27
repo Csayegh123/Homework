@@ -1,155 +1,130 @@
-.center {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#section [class="mySlides"]
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-.nav {
- 
-  background-color: #474e5d;
-  color: #45a049;
 
+.hoverable{
+  display:inline-block;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position:relative;
+  box-shadow: 0 0 1px rgba(0,0,0,0);
+  tranform: translateZ(0);
+  transition-duration: .3s;
+  transition-property:transform;
 }
 
-.content {
-  max-width: 500px;
-  margin: center;
+.hoverable:before{
+  position:absolute;
+  pointer-events: none;
+  z-index:-1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height:10px;
+  width:90%;
+  opacity:0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+  /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
 }
 
-{
-    box-sizing: border-box;
-  }
-  
-  /* Style inputs */
-  input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  /* Style the container/contact section */
-  .container {
-    border-radius: 25px;
-    background-color: firebrick;
-    padding: 10px;
-  }
-  
-  /* Create two columns that float next to eachother */
-  .column {
-    float: center;
+.hoverable:hover, .hoverable:active, .hoverable:focus{
+  transform: translateY(-5px);
+}
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before{
+  opacity: 1;
+  transform: translateY(-5px);
+}
 
-    margin-top: 6px;
-    padding: 20px;
-    height: 100px;
-    width: auto;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
+
+
+@keyframes bounce-animation {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
   }
 
-  body {
-    float: ;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: center;
-    background-color: #555;
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
   }
-  
-  html {
-    box-sizing: 25px;
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
   }
-  
-  *, *:before, *:after {
-    box-sizing: 10%;
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
   }
-  
-  .column {
-    
-    float: left;
-    width: 33.3%;
-    margin-bottom: 25px;
-    padding: 0 8px;
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
   }
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
-  
-  .about-section {
-    padding: 60px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
-  
-  .container {
-    padding: 0 16px;
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .button {
-    border: none;
-    outline: 0;
+}
+
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 2s;
+}
+
+
+
+/*everything below here is just setting up the page, so dont worry about it */
+
+
+@media (min-width: 768px) {
+  .navbar{
+    text-align: center !important;
+    float: none;
     display: inline-block;
-    padding: 8px;
-    color: blue;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
   }
-  
-  .button:hover {
-    background-color: #555;
-  }
-  
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
+}
+
+body {
+  background-color: rgba(0,0,0,1);
+  font-weight:600;
+  text-align:center !important;
+  color: white;
+}
+
+nav {
+  background: none !important;
+  text-transform:uppercase;
+  li {
+    margin-left: 3em;
+    margin-right: 3em;
+    a{
+      transition: .5s color ease-in-out;
     }
   }
+}
+
+.page-title {
+  opacity: .75 !important;
+}
+#navbar {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 50%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 35px;
+  border-style: groove;
+}
+
+#pics {
+  text-align: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
